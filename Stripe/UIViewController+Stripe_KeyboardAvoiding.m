@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithKeyboardFrameBlock:(STPKeyboardFrameBlock)block 
                                 scrollView:(nullable UIScrollView *)scrollView {
     self = [super initWithNibName:nil bundle:nil];
+    /*
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldWillBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:nil];
@@ -33,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
         _managedScrollView = scrollView;
         _currentBottomInsetChange = 0;
     }
+    */
     return self;
 }
 
@@ -47,6 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
     self.view = view;
 }
 
+/*
 - (void)textFieldWillBeginEditing:(NSNotification *)notification {
     UITextField *textField = notification.object;
     if (![textField isKindOfClass:[UITextField class]] || ![textField isDescendantOfView:self.parentViewController.view]) {
@@ -100,11 +103,13 @@ NS_ASSUME_NONNULL_BEGIN
         self.keyboardFrameBlock(keyboardFrame, self.lastResponder);
     }
 }
+*/
 
 @end
 
 @implementation UIViewController (Stripe_KeyboardAvoiding)
 
+/*
 - (STPKeyboardDetectingViewController *)stp_keyboardDetectingViewController {
     return [[self.childViewControllers filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UIViewController *viewController, __unused NSDictionary *bindings) {
         return [viewController isKindOfClass:[STPKeyboardDetectingViewController class]];
@@ -125,7 +130,7 @@ NS_ASSUME_NONNULL_BEGIN
     [self.view addSubview:keyboardAvoiding.view];
     [keyboardAvoiding didMoveToParentViewController:self];
 }
-
+*/
 @end
 
 void linkUIViewControllerKeyboardAvoidingCategory(void){}
