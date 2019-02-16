@@ -246,8 +246,8 @@ typedef NS_ENUM(NSUInteger, STPPaymentCardSection) {
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self stp_beginObservingKeyboardAndInsettingScrollView:self.tableView
-                                             onChangeBlock:nil];
+    //[self stp_beginObservingKeyboardAndInsettingScrollView:self.tableView
+    //                                         onChangeBlock:nil];
     [[self firstEmptyField] becomeFirstResponder];
 }
 
